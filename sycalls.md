@@ -11,16 +11,16 @@ Fail: When there is no memory to allocate.
 
 Display file or file system status.
 
-	*Arguments: char filename, stat buffer
+Arguments: char filename, stat buffer
 
 
 # KILL
 
 Sends a signal to a process.
 
-	Arguments:
-	*pid_t:  
-	    If pid is positive, then signal sig is sent to the process with the
+Arguments:
+	pid_t:  
+	If pid is positive, then signal sig is sent to the process with the
         ID specified by pid.
 
         If pid equals 0, then sig is sent to every process in the process
@@ -33,7 +33,7 @@ Sends a signal to a process.
         If pid is less than -1, then sig is sent to every process in the
         process group whose ID is -pid.
 
-	*int sig:
+	int sig:
 	    If sig is 0, then no signal is sent, but existence and permission
        	checks are still performed; this can be used to check for the
        	existence of a process ID or process group ID that the caller is
@@ -41,11 +41,11 @@ Sends a signal to a process.
 
 	Fail:
 
-	*if the target process or process group does not exist
+	if the target process or process group does not exist
 
-	*if the calling process does not have permission to send the signal to any of the 	target process.
+	if the calling process does not have permission to send the signal to any of the 	target process.
 
-	+if an invalid signal was specified
+	if an invalid signal was specified
 
 
 #MMAP
@@ -54,16 +54,16 @@ map or unmap files or devices into memory
 
 	Arguments:
 		mmap:
-			*void *addr
-			*size_t length
-			*int prot
-			*int flags
-			*int fd
-			*off_t offset
+			void *addr
+			size_t length
+			int prot
+			int flags
+			int fd
+			off_t offset
 
 	munmap:
-			*void* addr
-			*size_t length
+			void* addr
+			size_t length
 
 # CHMOD
 
@@ -71,38 +71,38 @@ chang file mode bits
 
 	Arguments:
 		chmod:
-			*char *pathname
-			*mode_t mode
+			char *pathname
+			mode_t mode
 
 		fchmod:
-			*int fd
-			*mode_t mode
+			int fd
+			mode_t mode
 
 	Fail:
 
-		*file does not exist
-		*a component of the path prefix is not a directory
-		*The file descriptor fd is not valid
+		file does not exist
+		a component of the path prefix is not a directory
+		the file descriptor fd is not valid
 
 
 # WAITPID
 
-    *wait for process to change state
+    wait for process to change state
 
 	Arguments:
-		*pid_t wait:
+		pid_t wait:
 			**int *wstatus
 
-		*pid_t waitpid:
-			**pid_t pid
-			**int *wstatus
-			**int options
+		pid_t waitpid:
+			pid_t pid
+			int *wstatus
+			int options
 
-		*int waitid:
-			**idtype_t idtype
-			**id_t id
-			**siginfo_t *infop
-			**int options
+		int waitid:
+			idtype_t idtype
+			id_t id
+			siginfo_t *infop
+			int options
 
 
 # What is a trap instruction?
