@@ -4,7 +4,7 @@
 
 Creates a new process by duplicating the calling process. The new process is referred to as the child process. The calling process is referred to as the parent process.
 
-	*Fail: When there is no memory to allocate.
+	..*Fail: When there is no memory to allocate.
 
 
 # STAT
